@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0a0c12;
+  color: #e7e9ee;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}
+
+/* shiki code block defaults */
+.shiki {
+  background: transparent !important;
+  font-family:
+    'JetBrains Mono',
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.shiki code {
+  display: block;
+  padding: 14px 16px;
+  background: transparent;
+  color: inherit;
+}
+
+/* hide native caret in our demo inputs — we draw our own */
+.demo-caret-host {
+  caret-color: transparent;
+}
+
+@keyframes glyphIn {
+  0% {
+    transform: translateY(-6px) scale(0.8);
+    opacity: 0;
+    color: #7dd3fc;
+  }
+  60% {
+    color: #7dd3fc;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    color: inherit;
+  }
+}
+
+@keyframes ghostOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    max-width: 1ch;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+    max-width: 0;
+  }
+}
+
+@keyframes caretBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes caretMove {
+  0% {
+    transform: scaleY(0.6);
+    background: #7dd3fc;
+  }
+  100% {
+    transform: scaleY(1);
+    background: #38bdf8;
+  }
+}
