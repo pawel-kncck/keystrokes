@@ -1,5 +1,6 @@
 import { EditorDemo } from '../components/EditorDemo';
 import type { AtomicFunction, FunctionGroup } from '../types';
+import { traceInsertChar } from '../lib/trace';
 
 import { insertChar } from '../algorithms/insertChar.js';
 import insertCharSource from '../algorithms/insertChar.js?raw';
@@ -51,6 +52,12 @@ const FUNCTIONS: AtomicFunction[] = [
         hint="type any printable character — watch where it lands relative to the cursor"
       />
     ),
+    trace: traceInsertChar,
+    reducer: insertChar,
+    demoConfig: {
+      text: 'hello ',
+      hint: 'type a printable char — each keystroke walks the code below',
+    },
   },
   {
     id: 'backspace',

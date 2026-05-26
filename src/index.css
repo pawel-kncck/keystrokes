@@ -104,3 +104,30 @@ body {
     background: #38bdf8;
   }
 }
+
+/* stepped code panel: each line becomes block so we can draw a full-width
+   highlight on the active one. */
+.stepped-code .shiki .line {
+  display: block;
+  padding: 0 16px;
+  margin: 0 -16px;
+  transition:
+    background-color 180ms ease-out,
+    box-shadow 180ms ease-out;
+}
+
+.stepped-code .shiki .line.is-active {
+  background: rgba(56, 189, 248, 0.12);
+  box-shadow: inset 2px 0 0 #38bdf8;
+}
+
+@keyframes scopeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
